@@ -1,0 +1,270 @@
+#N canvas 15 46 1263 724 10;
+#X obj -286 -94 outlet~;
+#X obj 349 -25 textfile;
+#X obj 57 -199 bng 27 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 400 -52 clear;
+#X obj 372 -348 my.hero.mmb \$0-files;
+#X msg 383 -369 save;
+#X obj 414 -409 textfile;
+#X msg 414 -430 read \$1 \, rewind \, bang;
+#X obj 414 -389 t b a;
+#X obj 441 -368 prepend load;
+#X obj 349 -408 savepanel;
+#X obj 366 -94 prepend add;
+#X msg 366 -327 wave 0 \, attack 10 \, decay 10 \, sustain 100 \, release
+10 \, polmon 1 \, mod 0 \, mrate 0 \, gliss 0 \, scope 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \,;
+#X obj 85 -198 popup 124 25 #ffffff popup Default.additive~ Default.csound~
+Default.parametric~ Default.waveshapes~;
+#X obj 376 171 list prepend add2;
+#X obj 376 192 list trim;
+#X msg 349 216 options Default.additive~ Default.csound~ Default.parametric~
+Default.waveshapes~;
+#X msg 368 102 set options;
+#X obj 349 80 t b a;
+#X obj 517 11 loadbang;
+#X msg 388 80 set;
+#X obj 376 129 splitfilename /;
+#X msg 218 -142 \$2 \$1;
+#X obj 218 -163 pack s s;
+#X obj 218 -121 mergefilename /;
+#X obj 376 150 splitfilename .;
+#X obj 218 -100 pack s s;
+#X msg 218 -79 \$1 \$2;
+#X obj 218 -58 mergefilename .;
+#X obj 349 -428 symbol;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \$0-scope 131 float 5;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 1 130 -1 298 100 1;
+#X restore -89 -82 graph;
+#X obj 349 -389 t s b b b;
+#X obj 349 39 t a b b;
+#X msg 509 150 symbol \$1;
+#X obj 509 -92 splitfilename /;
+#X obj 509 -72 makefilename %s/*.txt;
+#X obj 509 171 s directory;
+#X obj 349 19 r directory;
+#X msg 509 53;
+#X obj 509 129 symbol;
+#X msg 509 -30 save;
+#X obj 517 32 t b b;
+#X obj 509 -52 t b s;
+#X symbolatom 536 86 10 0 0 0 - - -;
+#X obj 427 6 prepend load;
+#X obj 509 -10 my.hero.mmb \$0;
+#X obj 509 106 save.me.mmb directory \$0;
+#X obj -77 291 pack 0 0 0 0 0 0 0 0 0 0 0;
+#X obj -89 21 vsl 29 155 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj -59 21 vsl 29 155 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj -29 21 vsl 29 155 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 1 21 vsl 29 155 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 31 21 vsl 29 155 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 61 21 vsl 29 155 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 91 21 vsl 29 155 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 121 21 vsl 29 155 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 151 21 vsl 29 155 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 181 21 vsl 28 155 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj -89 227 t b f;
+#X obj -74 247 t b f;
+#X obj -59 267 t b f;
+#X obj -43 227 t b f;
+#X obj -28 247 t b f;
+#X obj -13 267 t b f;
+#X obj 3 227 t b f;
+#X obj 18 247 t b f;
+#X obj 33 267 t b f;
+#X obj 49 227 t b f;
+#X obj -288 2 save.me.mmb partial1 \$0-files;
+#X obj -288 22 save.me.mmb partial2 \$0-files;
+#X obj -288 42 save.me.mmb partial3 \$0-files;
+#X obj -288 62 save.me.mmb partial4 \$0-files;
+#X obj -288 82 save.me.mmb partial5 \$0-files;
+#X obj -288 102 save.me.mmb partial6 \$0-files;
+#X obj -288 122 save.me.mmb partial7 \$0-files;
+#X obj -288 142 save.me.mmb partial8 \$0-files;
+#X obj -288 162 save.me.mmb partial9 \$0-files;
+#X obj -288 182 save.me.mmb partial10 \$0-files;
+#X obj -286 -411 pack;
+#X msg -286 -389 midi 144 \$1 \$2;
+#X msg -278 -327 event f 1 0 1024 10 1;
+#X msg -248 -242 event f 1 0 1024 10 1 0 -0.111 0 0.04 0 -0.02 0 0.0123
+;
+#X msg -238 -222 event f 1 0 1024 10 1 1 1 1 1 1 1 1 1;
+#X obj -272 -347 loadbang;
+#X obj -278 -368 sel 0 1 2 3 4;
+#X obj -89 -172 vradio 15 1 0 5 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X msg -268 -307 event f 1 0 1024 10 1 0.5 0.33333 0.25 0.2 0.166667
+0.142857 0.125 0.111111 0.1 0.909 0.83333 0.076923;
+#X msg -258 -274 event f 1 0 1024 10 1 0 0.33333 0 0.2 0 0.142857 0
+0.111111 0 0.909 0 0.076923;
+#X obj -278 -160 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+1 1;
+#X obj -278 -138 metro 100;
+#X obj -278 -182 loadbang;
+#X obj -286 -202 csoundapi~ pdwaveshapes.csd;
+#X obj -147 -97 outlet~;
+#X obj -278 -114 tabwrite~ \$0-scope;
+#X obj -286 -431 inlet;
+#X obj -246 -431 inlet;
+#X msg -77 312 event f 1 0 1024 10 \$2 \$3 \$4 \$5 \$6 \$7 \$8 \$9
+\$10 \$11 \$1;
+#X text -71 -173 Sine;
+#X text -71 -158 Sawtooth;
+#X text -72 -142 Triangle;
+#X text -71 -128 Square;
+#X text -70 -112 Pulse;
+#X msg 349 -73 write \$1.csound~.txt;
+#X obj 349 61 folder_list *.csound~.txt;
+#X connect 2 0 29 0;
+#X connect 3 0 1 0;
+#X connect 4 0 12 0;
+#X connect 5 0 4 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 8 1 9 0;
+#X connect 9 0 4 0;
+#X connect 10 0 31 0;
+#X connect 11 0 1 0;
+#X connect 12 0 11 0;
+#X connect 13 1 23 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 13 0;
+#X connect 17 0 16 0;
+#X connect 18 0 16 0;
+#X connect 18 1 21 0;
+#X connect 19 0 41 0;
+#X connect 20 0 16 0;
+#X connect 21 0 23 1;
+#X connect 21 0 29 1;
+#X connect 21 1 25 0;
+#X connect 22 0 24 0;
+#X connect 23 0 22 0;
+#X connect 24 0 26 0;
+#X connect 25 0 14 0;
+#X connect 25 1 26 1;
+#X connect 26 0 27 0;
+#X connect 27 0 28 0;
+#X connect 28 0 7 0;
+#X connect 29 0 10 0;
+#X connect 31 0 102 0;
+#X connect 31 0 34 0;
+#X connect 31 1 12 0;
+#X connect 31 2 5 0;
+#X connect 31 3 3 0;
+#X connect 32 0 103 0;
+#X connect 32 1 17 0;
+#X connect 32 2 20 0;
+#X connect 33 0 36 0;
+#X connect 34 0 35 0;
+#X connect 35 0 42 0;
+#X connect 37 0 32 0;
+#X connect 38 0 44 0;
+#X connect 39 0 33 0;
+#X connect 39 0 43 0;
+#X connect 40 0 45 0;
+#X connect 41 0 38 0;
+#X connect 41 1 32 0;
+#X connect 42 0 40 0;
+#X connect 42 1 43 0;
+#X connect 43 0 36 0;
+#X connect 43 0 46 0;
+#X connect 44 0 45 0;
+#X connect 45 0 38 0;
+#X connect 46 0 39 0;
+#X connect 47 0 96 0;
+#X connect 48 0 58 0;
+#X connect 48 0 68 0;
+#X connect 49 0 59 0;
+#X connect 49 0 69 0;
+#X connect 50 0 60 0;
+#X connect 50 0 70 0;
+#X connect 51 0 61 0;
+#X connect 51 0 71 0;
+#X connect 52 0 62 0;
+#X connect 52 0 72 0;
+#X connect 53 0 63 0;
+#X connect 53 0 73 0;
+#X connect 54 0 64 0;
+#X connect 54 0 74 0;
+#X connect 55 0 65 0;
+#X connect 55 0 75 0;
+#X connect 56 0 66 0;
+#X connect 56 0 76 0;
+#X connect 57 0 67 0;
+#X connect 57 0 77 0;
+#X connect 58 0 47 0;
+#X connect 58 1 47 1;
+#X connect 59 0 47 0;
+#X connect 59 1 47 2;
+#X connect 60 0 47 0;
+#X connect 60 1 47 3;
+#X connect 61 0 47 0;
+#X connect 61 1 47 4;
+#X connect 62 0 47 0;
+#X connect 62 1 47 5;
+#X connect 63 0 47 0;
+#X connect 63 1 47 6;
+#X connect 64 0 47 0;
+#X connect 64 1 47 7;
+#X connect 65 0 47 0;
+#X connect 65 1 47 8;
+#X connect 66 0 47 0;
+#X connect 66 1 47 9;
+#X connect 67 0 47 0;
+#X connect 67 1 47 10;
+#X connect 68 0 48 0;
+#X connect 69 0 49 0;
+#X connect 70 0 50 0;
+#X connect 71 0 51 0;
+#X connect 72 0 52 0;
+#X connect 73 0 53 0;
+#X connect 74 0 54 0;
+#X connect 75 0 55 0;
+#X connect 76 0 56 0;
+#X connect 77 0 57 0;
+#X connect 78 0 79 0;
+#X connect 79 0 91 0;
+#X connect 80 0 91 0;
+#X connect 81 0 91 0;
+#X connect 82 0 91 0;
+#X connect 83 0 80 0;
+#X connect 84 0 80 0;
+#X connect 84 1 86 0;
+#X connect 84 2 87 0;
+#X connect 84 3 81 0;
+#X connect 84 4 82 0;
+#X connect 85 0 84 0;
+#X connect 86 0 91 0;
+#X connect 87 0 91 0;
+#X connect 88 0 89 0;
+#X connect 89 0 93 0;
+#X connect 90 0 88 0;
+#X connect 91 0 0 0;
+#X connect 91 0 93 0;
+#X connect 91 1 92 0;
+#X connect 94 0 78 0;
+#X connect 95 0 78 1;
+#X connect 96 0 91 0;
+#X connect 102 0 1 0;
+#X connect 103 0 18 0;
+#X coords 0 -1 1 1 300 380 1 -90 -200;

@@ -1,0 +1,36 @@
+#N canvas 606 68 450 261 10;
+#X obj -49 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -49 98 arithmetic 2000 30;
+#X floatatom -24 141 5 0 0 0 - - -;
+#X text -109 -2 Arithmetic Acceleration dn = d0 - cn;
+#X obj -31 78 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg -49 34 bang;
+#X msg -41 57 stop;
+#X obj -24 121 ioi;
+#X text -6 32 <--Can be started and stopped with messages or booleans
+;
+#X text 31 166 |;
+#X text 31 156 |;
+#X text 31 146 |;
+#X text 31 136 |;
+#X text 31 148 |;
+#X text 31 138 |;
+#X text 31 128 |;
+#X text 31 118 |;
+#X text 32 114 ^;
+#X floatatom 3 77 5 0 0 0 - - -;
+#X floatatom 56 78 5 0 0 0 - - -;
+#X text 90 79 <--d0 and c can be updated.;
+#X text -51 180 Creation arguments are d0 and c where d0 = initial
+duration and c = constant of acceleration all in milliseconds.;
+#X obj 271 233 reference;
+#X connect 1 0 0 0;
+#X connect 1 0 7 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 0;
+#X connect 7 0 2 0;
+#X connect 18 0 1 1;
+#X connect 19 0 1 2;

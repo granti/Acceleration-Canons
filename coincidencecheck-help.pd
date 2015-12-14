@@ -1,0 +1,42 @@
+#N canvas 0 0 746 456 10;
+#X obj 110 237 coincidencecheck 3000 0.95 500 1.05;
+#X floatatom 317 96 5 0 0 0 - - -;
+#X obj 110 114 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 110 333 10 0 0 0 - - -;
+#X text 3 0 Given the initial duration (d0) and acceleration ratio
+(r) of two accelerations coincidencecheck outputs the durations after
+the start time of the canon at which beats occur simultaneously.;
+#X floatatom 144 196 5 0 0 0 - - -;
+#X floatatom 179 196 5 0 0 0 - - -;
+#X floatatom 213 196 5 0 0 0 - - -;
+#X floatatom 248 196 5 0 0 0 - - -;
+#X floatatom 282 171 5 0 0 0 - - -;
+#X text 324 171 <--Number of beats of each canon to check \, default
+= 500;
+#X text 296 198 <--These inlets update the creation arguments.;
+#X text 327 236 <--Creation arguments are d01 \, r1 \, d02 \, r2: initial
+duration and acceleration ratio of each acceleration. Defaults are
+2000 \, 0.9995 \, 500 \, 1.0005;
+#X text 57 113 Check-->;
+#X text 355 93 <--Resolution. Check for beats occuring withing this
+number of milliseconds of eachother. Notes occuring withing 2ms of
+eachother appear simultaneous to the human ear. To discern which note
+occured first at least a 20ms difference is needed. Default = 1 The
+higher this is the less accurate the output;
+#X text 121 282 Radio button outputs the different points of coincidence.
+;
+#X text 126 269 |;
+#X text 127 265 ^;
+#X text 181 334 <--Time after start of the canon at which coincidence
+occurs in milliseconds \, always rounded to a multiple of the resolution.
+;
+#X obj 676 426 reference;
+#X connect 0 0 3 0;
+#X connect 1 0 0 6;
+#X connect 2 0 0 0;
+#X connect 5 0 0 1;
+#X connect 6 0 0 2;
+#X connect 7 0 0 3;
+#X connect 8 0 0 4;
+#X connect 9 0 0 5;

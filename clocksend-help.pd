@@ -1,0 +1,40 @@
+#N canvas 636 92 586 418 10;
+#X msg 100 133 localhost;
+#X msg 106 153 176.61.45.85;
+#X text -25 2 Sends bangs across a network using tcp packets to be
+received by [quantizer];
+#X text 169 131 <--IP address to link to. Default = localhost;
+#X text 191 146 This sends to quantizers on this machine;
+#X obj 39 356 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 70 356 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 37 41 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 47 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X floatatom 39 319 5 0 0 0 - - -;
+#X floatatom 70 338 5 0 0 0 - - -;
+#X obj 39 298 quantizer 1;
+#X obj 37 175 clocksend 1;
+#X obj 37 63 geometric 200 1.04;
+#X obj 39 271 notein;
+#X obj 47 107 metro 500;
+#X text 97 272 If you do not have a MIDI controller this can be replaced
+by;
+#X obj 464 272 qwertymidi;
+#X text 78 272 <--;
+#X text 113 176 <--Creation argument prevents crosstalk.;
+#X obj 491 390 reference;
+#X connect 0 0 12 1;
+#X connect 1 0 12 1;
+#X connect 7 0 13 0;
+#X connect 8 0 15 0;
+#X connect 9 0 5 0;
+#X connect 10 0 6 0;
+#X connect 11 0 9 0;
+#X connect 11 1 10 0;
+#X connect 13 0 12 0;
+#X connect 14 0 11 0;
+#X connect 14 1 11 1;
+#X connect 15 0 12 0;

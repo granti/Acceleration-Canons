@@ -1,0 +1,19 @@
+#N canvas 0 0 470 300 10;
+#X obj 82 113 grapher 3000 0.95 500 1.05;
+#X floatatom 82 64 5 0 0 0 - - -;
+#X floatatom 235 89 5 0 0 0 - - -;
+#X text 2 -7 For use in;
+#X obj 69 -7 graphtoarray;
+#X text 152 -7 to graph two accelerations to a;
+#X text 2 8 simple score which then can be printed and used to compose
+acceleration canons.;
+#X text 114 64 <--Resolution in tenths of a second;
+#X text 268 89 <--Number of beats to be graphed;
+#X text 102 149 Creation arguments are d01 \, r1 \, d02 \, r2: initial
+duration and acceleration ratio of each acceleration. Defaults are
+3000 \, 0.95 \, 500 \, 1.05;
+#X text 141 136 |;
+#X text 142 131 ^;
+#X obj 401 263 reference;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;

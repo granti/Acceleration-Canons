@@ -1,0 +1,36 @@
+#N canvas 126 160 450 300 10;
+#X obj 1 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 26 181 5 0 0 0 - - -;
+#X obj 19 118 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 1 74 bang;
+#X msg 9 97 stop;
+#X obj 26 161 ioi;
+#X text 44 72 <--Can be started and stopped with messages or booleans
+;
+#X text 81 206 |;
+#X text 81 196 |;
+#X text 81 186 |;
+#X text 81 176 |;
+#X text 81 188 |;
+#X text 81 178 |;
+#X text 81 168 |;
+#X text 81 158 |;
+#X text 82 154 ^;
+#X floatatom 50 117 5 0 0 0 - - -;
+#X floatatom 100 118 5 0 0 0 - - -;
+#X text 1 218 Creation arguments are d0 and r where d0 = initial duration
+in milliseconds and r = dn:dn-1 where dn is the nth duration.;
+#X obj 1 138 geometric 2000 30;
+#X text -50 -4 Geometric Acceleration dn = d0r^n;
+#X obj 331 273 reference;
+#X text 134 119 <--d0 and r can be updated.;
+#X connect 2 0 19 0;
+#X connect 3 0 19 0;
+#X connect 4 0 19 0;
+#X connect 5 0 1 0;
+#X connect 16 0 19 1;
+#X connect 17 0 19 2;
+#X connect 19 0 0 0;
+#X connect 19 0 5 0;

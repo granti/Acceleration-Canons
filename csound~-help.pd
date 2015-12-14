@@ -1,0 +1,36 @@
+#N canvas 95 0 725 676 10;
+#X text 60 109 Save as preset(best if saved in current directory of
+patch);
+#X text 86 131 Load preset(looks in current directory or last saved
+location);
+#X text 64 144 |;
+#X text 64 134 |;
+#X text 64 154 |;
+#X text 64 162 v;
+#X text 94 162 v;
+#X obj -92 628 output~;
+#X text 94 154 |;
+#X text 64 124 |;
+#X text 198 162 v;
+#X text 197 155 MIDI velocity in;
+#X text -88 162 v;
+#X text -89 155 MIDI pitch in;
+#X obj -92 72 notein;
+#X text -23 72 If you do not have a MIDI controller this can be replaced
+by;
+#X text -43 72 <--;
+#X obj 344 72 qwertymidi;
+#X text -83 558 ^ Mono output;
+#X obj -92 178 csound~;
+#X text 218 336 <--Time domain view of output.;
+#X text 220 477 <--Partial strengths for additive synthesis. f \, f/2
+\, f/3 \, f/4 \, etc.;
+#X text -154 1 MIDI controlled interface with pdwaveshapes.csd for
+users who prefer the sound of Csound. Users familiar with Csound can
+edit the csd file.;
+#X text 219 230 <--Waveform selector uses additive synthesis;
+#X obj 501 643 reference;
+#X connect 14 0 19 0;
+#X connect 14 1 19 1;
+#X connect 19 0 7 0;
+#X connect 19 0 7 1;

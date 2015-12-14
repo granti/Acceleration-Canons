@@ -1,0 +1,8 @@
+gliss 0;
+mrate 0;
+mod 0;
+polmon 1;
+release 10;
+sustain 100;
+decay 10;
+attack 10;

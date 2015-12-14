@@ -1,0 +1,35 @@
+#N canvas 403 101 467 424 10;
+#X obj 117 20 noise~;
+#X obj 117 179 *~;
+#X obj 132 159 line~;
+#X obj 132 40 loadbang;
+#X obj 132 61 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 116 376 output~;
+#X obj 140 100 delay 10;
+#X obj 132 80 metro 1000;
+#X msg 132 119 1 5;
+#X msg 140 139 0 15;
+#X text 25 255 True bypass-->;
+#X text 217 240 <--Optional creation argument needed;
+#X text 235 256 for state saving with;
+#X obj 369 256 savestate;
+#X obj 116 240 reverb~ 1;
+#X text 1 -3 Stereo reverb using freeverb (Schroeder/Moorer model)
+;
+#X obj 117 202 panner~;
+#X obj 398 396 reference;
+#X connect 0 0 1 0;
+#X connect 1 0 16 0;
+#X connect 2 0 1 1;
+#X connect 3 0 4 0;
+#X connect 4 0 7 0;
+#X connect 6 0 9 0;
+#X connect 7 0 8 0;
+#X connect 7 0 6 0;
+#X connect 8 0 2 0;
+#X connect 9 0 2 0;
+#X connect 14 0 5 0;
+#X connect 14 1 5 1;
+#X connect 16 0 14 0;
+#X connect 16 1 14 1;

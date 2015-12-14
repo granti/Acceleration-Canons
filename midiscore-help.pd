@@ -1,0 +1,30 @@
+#N canvas 157 366 590 317 10;
+#X obj 53 102 notein;
+#X text 122 102 If you do not have a MIDI controller this can be replaced
+by;
+#X text 102 102 <--;
+#X obj 489 102 qwertymidi;
+#X obj 101 150 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 2 1 Reads and records MIDI-style messages for monophonic playback
+;
+#X msg 38 61 clear;
+#X msg 44 81 rewind;
+#X obj 38 197 pack;
+#X text 101 58 <--Erases stored input;
+#X text 103 81 <--Returns to the start of playback;
+#X text 122 149 <--outputs next note;
+#X obj 38 171 midiscore 1;
+#X text 113 172 <--Optional creation argument needed for use with;
+#X obj 413 172 savestate;
+#X obj 38 220 print score;
+#X text 123 115 Writes notes to score;
+#X obj 517 285 reference;
+#X connect 0 0 12 0;
+#X connect 0 1 12 1;
+#X connect 4 0 12 2;
+#X connect 6 0 12 0;
+#X connect 7 0 12 0;
+#X connect 8 0 15 0;
+#X connect 12 0 8 0;
+#X connect 12 1 8 1;

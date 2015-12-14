@@ -1,0 +1,73 @@
+#N canvas 35 -9 583 595 10;
+#X msg 110 373 localhost;
+#X msg 116 393 176.61.45.85;
+#X text 179 371 <--IP address to link to. Default = localhost;
+#X obj 112 499 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 47 281 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 57 328 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 49 499 5 0 0 0 - - -;
+#X floatatom 80 518 5 0 0 0 - - -;
+#X obj 49 478 quantizer 1;
+#X obj 47 415 clocksend 1;
+#X obj 47 303 geometric 200 1.04;
+#X obj 49 451 notein;
+#X obj 57 347 metro 500;
+#X text 123 416 <--Creation argument prevents crosstalk.;
+#X floatatom 49 169 5 0 0 0 - - -;
+#X floatatom 74 188 5 0 0 0 - - -;
+#X obj 49 121 notein;
+#X text 107 122 If you do not have a MIDI controller this can be replaced
+by;
+#X obj 474 122 qwertymidi;
+#X text 88 122 <--;
+#X obj 100 169 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 51 262 -------------------------with clocksend---------------------
+;
+#X text 51 72 ---------------------------right inlet----------------------
+;
+#X obj 49 148 quantizer;
+#X text 109 148 <--No creation argument needed.;
+#X text 201 386 This sends to quantizers on this machine.;
+#X text 123 477 <--Creation argument prevents crosstalk.;
+#X text 129 499 <--lets through a stream of bangs from clocksend;
+#X text 116 169 <--nothing comes out here without clocksend;
+#X obj 100 105 geometric 300 1.03;
+#X obj 100 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 56 535 |;
+#X text 56 525 |;
+#X text 57 521 ^;
+#X text 87 536 |;
+#X text 88 532 ^;
+#X text 55 551 Quantized version of input.;
+#X text 56 205 |;
+#X text 56 195 |;
+#X text 57 191 ^;
+#X text 87 206 |;
+#X text 88 202 ^;
+#X text 55 221 Quantized version of input.;
+#X text 2 0 Quantizes MIDI-style note messages in realtime to a pulse
+either coming from a clocksend or into its right inlet.;
+#X obj 500 561 reference;
+#X connect 0 0 9 1;
+#X connect 1 0 9 1;
+#X connect 4 0 10 0;
+#X connect 5 0 12 0;
+#X connect 8 0 6 0;
+#X connect 8 1 7 0;
+#X connect 8 2 3 0;
+#X connect 10 0 9 0;
+#X connect 11 0 8 0;
+#X connect 11 1 8 1;
+#X connect 12 0 9 0;
+#X connect 16 0 23 0;
+#X connect 16 1 23 1;
+#X connect 23 0 14 0;
+#X connect 23 1 15 0;
+#X connect 23 2 20 0;
+#X connect 29 0 23 2;
+#X connect 30 0 29 0;

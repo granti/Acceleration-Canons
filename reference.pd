@@ -1,0 +1,37 @@
+#N canvas 846 5 389 716 10;
+#X obj 16 -23 arithmetic;
+#X obj 16 5 geometric;
+#X obj 16 33 generalised;
+#X text 12 -47 ------------------Acceleration Equations--------------------
+;
+#X text 12 63 ----------------Predetermined Canon Tools-------------------
+;
+#X text 12 201 ------------------Realtime Canon Tools----------------------
+;
+#X text 12 268 --------------------Signal Generators-----------------------
+;
+#X obj 16 286 waveshapes~;
+#X obj 16 1527 parametric~;
+#X obj 16 700 additive~;
+#X obj 16 1111 csound~;
+#X obj 16 1716 compress~;
+#X text 12 1508 ----------------------Effects/Dynamics----------------------
+;
+#X obj 16 1845 reverb~;
+#X obj 16 1966 delayer~;
+#X text 12 2068 ----------------------------Mixing--------------------------
+;
+#X obj 16 2085 mono~;
+#X obj 16 2297 stereo~;
+#X obj 16 2256 panner~;
+#X obj 16 219 quantizer;
+#X text 12 2468 -----------------------------Other--------------------------
+;
+#X obj 16 2483 savestate;
+#X obj 16 2511 qwertymidi;
+#X obj 16 2539 ioi;
+#X obj 16 247 clocksend;
+#X obj 15 108 grapher;
+#X obj 15 164 coincidencecheck;
+#X obj 15 136 midiscore;
+#X text 11 82 [graphtoarray];

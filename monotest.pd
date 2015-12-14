@@ -1,0 +1,16 @@
+#N canvas 748 48 458 317 10;
+#X obj 39 12 panner~ 1;
+#X obj 1 46 savestate;
+#X msg 1 66 state 2-dry 0 \, state 2-wet 0.315957 \, state 2-width
+1 \, state 2-damp 0.526596 \, state 2-room 0.889362 \, state 2-reverb
+0 \, state 2-level 0.214286 \, state 2-feedback 0.428571 \, state 2-time
+375 \, state 2-delayer 0 \, state 2-panner 0.864865 \, state 1-look
+31 \, state 1-release 59 \, state 1-attack 6 \, state 1-ratio 6 \,
+state 1-thresh 53 \, state 1-compress 0 \, state 1-panner 0.864865
+\,;
+#X obj 3 195 compress~ 1;
+#X obj 147 12 panner~ 2;
+#X obj 123 202 delayer~ 2;
+#X obj 234 176 reverb~ 2;
+#X connect 1 0 2 0;
+#X connect 2 0 1 0;

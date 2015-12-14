@@ -1,0 +1,76 @@
+#N canvas 38 21 722 603 10;
+#X obj 296 96 savestate;
+#X msg -71 96 state 3-look 14 \, state 3-release 33 \, state 3-attack
+42 \, state 3-ratio 1.65 \, state 3-thresh 138 \, state 3-look 14 \,
+state 3-release 33 \, state 3-attack 42 \, state 3-ratio 1.65 \, state
+3-thresh 138 \, state \$1-release 20 \, state \$1-attack 20 \, state
+\$1-ratio 1 \, state \$1-thresh 100 \, state 1-level 0.714286 \, state
+1-feedback 0.357143 \, state 1-time 485 \, state 2-look 31 \, state
+2-release 76 \, state 2-attack 75 \, state 2-ratio 2 \, state 2-thresh
+88 \, state 2-compress 1 \, state 1-release 32 \, state 1-attack 41
+\, state 1-ratio 1.59 \, state 1-thresh 92 \, state \$1-panner 0.5
+\, state \$1-level 0.5 \, state \$1-feedback 0 \, state \$1-time 350
+\, state \$1-dry 0 \, state \$1-wet 0.315957 \, state \$1-width 1 \,
+state \$1-damp 0.526596 \, state \$1-room 0.889362 \, state \$1-release
+20 \, state \$1-attack 20 \, state \$1-ratio 1 \, state \$1-thresh
+100 \,;
+#X text -79 53 Message box is needed to store values;
+#X text -67 65 |;
+#X text -67 72 v;
+#X obj -60 433 compress~ 1;
+#X obj 53 434 compress~ 2;
+#X text -70 308 Loads saved presets on creation or when the message
+box is clicked/banged.;
+#X text -60 296 |;
+#X text -59 291 ^;
+#X text 399 229 <--Adjust controls;
+#X text 399 244 and then save state;
+#X text 0 409 |;
+#X text 0 416 v;
+#X text 113 409 |;
+#X text 113 416 v;
+#X text 60 399 |;
+#X text 4 400 ________________;
+#X text 87 400 _____;
+#X text 357 115 |;
+#X text 358 110 ^;
+#X text 288 124 To save the state of these objects you must first click
+this bang and then save the patch \, doing one without the other will
+not suffice.;
+#X text -73 373 Creation arguments prevent cross-talk between objects
+of the same type. An argument is necessary to save.;
+#X obj 310 204 delayer~ 1;
+#X msg -32 75 set;
+#X obj 163 434 compress~;
+#X obj 273 434 compress~ 3;
+#X obj 383 434 compress~ 3;
+#X text 32 565 Good;
+#X text 189 564 Bad;
+#X text 362 564 Ugly;
+#X text 24 553 |;
+#X text 25 548 ^;
+#X text 61 553 |;
+#X text 62 548 ^;
+#X text 195 553 |;
+#X text 196 548 ^;
+#X text 355 553 |;
+#X text 356 548 ^;
+#X text 387 553 |;
+#X text 388 548 ^;
+#X text 151 579 Reverts to default;
+#X text 304 578 Arbitrarily loads settings of one to both;
+#X text 333 409 |;
+#X text 333 416 v;
+#X text 443 409 |;
+#X text 443 416 v;
+#X text 337 400 ________________;
+#X text 417 400 _____;
+#X text 390 399 comment;
+#X text -1 76 <--Set message clears saved data.;
+#X text -86 0 Works with [compress~] \, [reverb~] \, [delayer~] \,
+[mono~] \, [panner~] \, [stereo~] and [midiscore] to make their settings
+persistent.;
+#X obj 568 574 reference;
+#X connect 0 0 1 0;
+#X connect 1 0 0 0;
+#X connect 24 0 1 0;

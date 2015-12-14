@@ -1,0 +1,56 @@
+#N canvas 95 0 747 676 10;
+#X text 40 109 Save as preset(best if saved in current directory of
+patch);
+#X text 66 131 Load preset(looks in current directory or last saved
+location);
+#X text 44 144 |;
+#X text 44 134 |;
+#X text 44 154 |;
+#X text 44 162 v;
+#X text 74 162 v;
+#X obj -112 628 output~;
+#X text 74 154 |;
+#X text 44 124 |;
+#X text 178 162 v;
+#X text 177 155 MIDI velocity in;
+#X text -108 162 v;
+#X text -109 155 MIDI pitch in;
+#X obj -112 72 notein;
+#X text -43 72 If you do not have a MIDI controller this can be replaced
+by;
+#X text -63 72 <--;
+#X obj 324 72 qwertymidi;
+#X text -96 580 ^ Mono output;
+#X text 208 239 |;
+#X text 208 262 |;
+#X text 208 252 |;
+#X text 208 292 |;
+#X text 208 249 |;
+#X text 199 292 __;
+#X text 199 210 __;
+#X text 212 248 __;
+#X text 226 252 Envelope generator ADSR;
+#X text 6 247 MIDI learnable;
+#X text 6 261 pitch bend and;
+#X text 6 275 modulation;
+#X text 1 288 <--|;
+#X text 208 282 |;
+#X text 208 282 |;
+#X text -32 211 Glissando works in Mono mode;
+#X obj -112 178 additive~;
+#X text 1 228 <--|;
+#X text 208 272 |;
+#X text 208 272 |;
+#X text 208 229 |;
+#X text 208 219 |;
+#X text 208 219 |;
+#X text 198 359 <--Time domain view of waveform. Can be drawn on.;
+#X text 199 483 <--Sliders representing strength of partials f/n where
+n is the number of the slider from left to right 1-10 and f is the
+fundamental. The output is normalized so strengths are relative.;
+#X text -174 1 MIDI controlled additive synthesizer;
+#X obj 501 643 reference;
+#X connect 14 0 35 0;
+#X connect 14 1 35 1;
+#X connect 35 0 7 0;
+#X connect 35 0 7 1;

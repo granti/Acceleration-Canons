@@ -1,0 +1,18 @@
+#N canvas 27 19 450 327 10;
+#X text 3 0 A mono to stereo panner.;
+#X obj 39 104 stereo~;
+#X obj 39 42 osc~ 440;
+#X obj 39 273 output~;
+#X obj 39 64 panner~ 1;
+#X text 127 65 <--Optional creation argument needed;
+#X text 145 81 for state saving with;
+#X obj 279 81 savestate;
+#X text 104 32 inlet controls panning L-R = 0-1;
+#X text 110 42 |;
+#X text 110 49 v;
+#X obj 381 300 reference;
+#X connect 1 0 3 0;
+#X connect 1 1 3 1;
+#X connect 2 0 4 0;
+#X connect 4 0 1 0;
+#X connect 4 1 1 1;

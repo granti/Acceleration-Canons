@@ -1,0 +1,8 @@
+#N canvas 0 0 471 629 10;
+#X obj 137 29 qwertymidi;
+#X obj 137 54 waveshapes~;
+#X obj 137 463 output~;
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;

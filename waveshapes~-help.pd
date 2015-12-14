@@ -1,0 +1,67 @@
+#N canvas 95 0 968 716 10;
+#X text 250 109 Save as preset(best if saved in current directory of
+patch);
+#X text 276 131 Load preset(looks in current directory or last saved
+location);
+#X text 254 144 |;
+#X text 254 134 |;
+#X text 254 154 |;
+#X text 254 162 v;
+#X text 284 162 v;
+#X obj 98 628 output~;
+#X text 284 154 |;
+#X text 254 124 |;
+#X text 388 162 v;
+#X text 387 155 MIDI velocity in;
+#X text 102 162 v;
+#X text 101 155 MIDI pitch in;
+#X obj 98 72 notein;
+#X text 167 72 If you do not have a MIDI controller this can be replaced
+by;
+#X text 147 72 <--;
+#X obj 534 72 qwertymidi;
+#X text 114 580 ^ Mono output;
+#X text 418 246 |;
+#X text 418 236 |;
+#X text 418 266 |;
+#X text 418 236 |;
+#X text 418 289 |;
+#X text 418 279 |;
+#X text 418 329 |;
+#X text 418 276 |;
+#X text 418 309 |;
+#X text 418 309 |;
+#X text 418 299 |;
+#X text 409 329 __;
+#X text 409 227 __;
+#X text 422 275 __;
+#X text 436 279 Envelope generator ADSR;
+#X text 256 207 MIDI learnable;
+#X text 256 221 pitch bend and;
+#X text 256 235 modulation;
+#X text 251 248 <--|;
+#X obj 98 178 waveshapes~;
+#X text 418 319 |;
+#X text 418 319 |;
+#X text 418 256 |;
+#X text 154 339 Glissando works in Mono mode;
+#X text 181 331 |;
+#X text 182 329 ^;
+#X text 408 399 <--Time domain view of output. When either random mode
+is selected it can be drawn on for more radical waveshapes.;
+#X text 409 506 <--Frequency domain view of output using Mike Moser-Booth's
+spectrum.mmb.pd;
+#X text -118 222 Waveshape selector;
+#X text -119 228 ------------------;
+#X text -120 244 Random 1 generates a sinusoidally;
+#X text -120 259 interpolated random waveform.;
+#X text -120 281 Random 2 takes a snapshot of white;
+#X text -119 293 noise.;
+#X text -154 1 MIDI controlled synthesiser based on chapter 3.5 in
+Johannes Kreidler's book Loadbang: Programming Electronic Music in
+Pd;
+#X obj 741 686 reference;
+#X connect 14 0 38 0;
+#X connect 14 1 38 1;
+#X connect 38 0 7 0;
+#X connect 38 0 7 1;

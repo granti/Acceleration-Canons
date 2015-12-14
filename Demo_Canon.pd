@@ -1,0 +1,123 @@
+#N canvas 0 0 815 700 10;
+#X obj 545 15 savestate;
+#X obj 97 -56 midiscore 1;
+#X obj 160 -79 geometric 1500 0.9552;
+#X obj 389 -76 geometric 250 1.05;
+#X obj 92 -105 qwertymidi;
+#X msg 59 -125 rewind;
+#X obj 326 -47 midiscore 1;
+#X obj 13 48 waveshapes~;
+#X obj 109 616 output~;
+#X obj 173 -257 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+1 1;
+#X msg 309 -105 rewind;
+#X obj 322 49 waveshapes~;
+#X obj 416 626 output~;
+#X obj 514 -115 counter;
+#X obj 522 -92 sel 22;
+#X obj 14 -95 counter;
+#X obj 22 -72 sel 22;
+#X obj 180 -216 route 1;
+#X msg 395 -106 250;
+#X msg 422 -103 1.05;
+#X msg 209 -101 1500;
+#X msg 250 -99 0.9552;
+#X obj 416 495 delayer~ 1;
+#X obj 415 590 panner~ 2;
+#X obj 108 457 panner~ 1;
+#X obj 14 457 mono~ 1;
+#X obj 321 467 mono~ 2;
+#X obj 109 503 reverb~ 1;
+#X msg 628 18 state 1-dry 0 \, state 1-wet 0.315957 \, state 1-width
+1 \, state 1-damp 0.526596 \, state 1-room 0.889362 \, state 1-panner
+0.5 \, state 2-panner 0.5 \, state 1-level 0.5 \, state 1-feedback
+0 \, state 1-time 350 \, state 1-pitch 53 55 57 59 60 60 59 56 59 62
+60 69 69 62 67 65 60 62 64 60 62 64 \, state 1-velocity 127 127 127
+127 127 127 127 127 127 127 127 127 127 127 127 127 127 127 127 127
+127 127 \, state 1-pitch 53 55 57 59 60 60 59 56 59 62 60 69 69 62
+67 65 60 62 64 60 62 64 \, state 1-velocity 127 127 127 127 127 127
+127 127 127 127 127 127 127 127 127 127 127 127 127 127 127 127 \,
+;
+#X obj 274 -218 delay 21814;
+#X obj 57 -220 delay 45000;
+#X msg 176 -127 572.9;
+#X msg 227 -128 1.0448;
+#X msg 395 -134 1250.8;
+#X msg 456 -127 0.95;
+#X text 193 -257 <--Make sure to switch the waveshapes to mono then
+hit play;
+#X obj 53 -197 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 408 -46 ioi;
+#X obj 408 -23 > 200;
+#X obj 408 2 sel 0;
+#X obj 178 -56 ioi;
+#X obj 178 -33 > 200;
+#X obj 178 -8 sel 0;
+#X connect 0 0 28 0;
+#X connect 1 0 7 0;
+#X connect 1 1 7 1;
+#X connect 2 0 1 2;
+#X connect 2 0 15 0;
+#X connect 2 0 40 0;
+#X connect 3 0 6 2;
+#X connect 3 0 13 0;
+#X connect 3 0 37 0;
+#X connect 4 0 1 0;
+#X connect 4 1 1 1;
+#X connect 5 0 1 0;
+#X connect 6 0 11 0;
+#X connect 6 1 11 1;
+#X connect 7 0 25 0;
+#X connect 9 0 2 0;
+#X connect 9 0 5 0;
+#X connect 9 0 3 0;
+#X connect 9 0 10 0;
+#X connect 9 0 17 0;
+#X connect 9 0 29 0;
+#X connect 9 0 30 0;
+#X connect 10 0 6 0;
+#X connect 11 0 26 0;
+#X connect 13 0 14 0;
+#X connect 14 0 13 2;
+#X connect 14 0 10 0;
+#X connect 15 0 16 0;
+#X connect 16 0 15 2;
+#X connect 16 0 5 0;
+#X connect 17 0 21 0;
+#X connect 17 0 20 0;
+#X connect 17 0 18 0;
+#X connect 17 0 19 0;
+#X connect 17 1 7 0;
+#X connect 17 1 7 1;
+#X connect 17 1 11 0;
+#X connect 17 1 11 1;
+#X connect 18 0 3 1;
+#X connect 19 0 3 2;
+#X connect 20 0 2 1;
+#X connect 21 0 2 2;
+#X connect 22 0 23 0;
+#X connect 23 0 12 0;
+#X connect 23 1 12 1;
+#X connect 24 0 27 0;
+#X connect 24 1 27 1;
+#X connect 25 0 24 0;
+#X connect 26 0 22 0;
+#X connect 27 0 8 0;
+#X connect 27 1 8 1;
+#X connect 28 0 0 0;
+#X connect 29 0 31 0;
+#X connect 29 0 33 0;
+#X connect 29 0 34 0;
+#X connect 29 0 32 0;
+#X connect 30 0 36 0;
+#X connect 31 0 2 1;
+#X connect 32 0 2 2;
+#X connect 33 0 3 1;
+#X connect 34 0 3 2;
+#X connect 37 0 38 0;
+#X connect 38 0 39 0;
+#X connect 39 0 19 0;
+#X connect 40 0 41 0;
+#X connect 41 0 42 0;
+#X connect 42 0 32 0;
